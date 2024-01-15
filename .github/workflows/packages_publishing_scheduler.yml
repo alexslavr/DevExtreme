@@ -7,10 +7,13 @@ on:
 
 jobs:
   publish:
-    runs-on: devextreme-shr2
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     strategy:
       matrix:
         branch: ['23_2', '24_1']
+
     name: Run Packages Publishing workflow
     steps:
       - name: Publish Packages (${{ matrix.branch }})
