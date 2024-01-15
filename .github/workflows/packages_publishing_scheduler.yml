@@ -7,7 +7,7 @@ on:
 
 jobs:
   publish:
-    runs-on: devextreme-shr2
+    runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     strategy:
@@ -16,9 +16,6 @@ jobs:
 
     name: Run Packages Publishing workflow
     steps:
-      - name: Get sources
-        uses: actions/checkout@v4
-
       - name: Publish Packages (${{ matrix.branch }})
         run: |
           gh workflow run packages_publishing.yml --ref ${{ matrix.branch }}          
