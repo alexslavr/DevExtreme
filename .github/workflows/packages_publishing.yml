@@ -24,7 +24,7 @@ jobs:
 
     steps:
       - name: Run publish
-        run: exit 1
+        run: exit 0
 
   notify:
     runs-on: ubuntu-latest
