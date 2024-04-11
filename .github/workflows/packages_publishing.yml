@@ -32,6 +32,7 @@ jobs:
     needs: [build, publish]
     if: contains(needs.*.result, 'failure')
 
+
     steps:
       - name: Test notifications
         run: echo "Notification!"
