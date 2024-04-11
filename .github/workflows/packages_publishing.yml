@@ -30,8 +30,8 @@ jobs:
     runs-on: ubuntu-latest
     name: Send notifications
     needs: [build, publish]
-    if: contains(needs.*.result, 'failure')
-
+    if: failure()
+    #if: contains(needs.*.result, 'failure')
 
     steps:
       - name: Test notifications
